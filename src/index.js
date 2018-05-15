@@ -4,18 +4,18 @@ import App from "./App";
 import "./index.css";
 import {getData} from "./getData";
 
-window.onload = function(){
+window.onload = function () {
   setTimeout(load, 10);
 
 };
 
-function load(){
-  getData((data)=>{
+function load() {
+  getData((data) => {
     render(data);
   });
 }
 
-function render(data){
+function render(data) {
 
   const {
     dateTime,

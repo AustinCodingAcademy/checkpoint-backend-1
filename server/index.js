@@ -1,4 +1,5 @@
 // const fetch = require("node-fetch");
+// const fs = require("fs");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -8,6 +9,11 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://mimitch:Bladerunner80@ds117590.mlab.com:17590/checkpoint-one");
 
+// issues:
+// 1. no place to add new message, 
+// 2. posting seems to use incorrect model? Are my models incorrect? 
+// 3. How do I read the .csv file and parse the data??
+// 4. why is the fox fetch not working? Where do I use routes/fetch? I am getting back the image URL but the app just freezes up
 
 
 const MessagesRoutes = require("./routes/MessagesRoutes");
@@ -16,10 +22,8 @@ const OrdersRoutes = require("./routes/OrdersRoutes");
 app.use(OrdersRoutes);
 const TasksRoutes = require("./routes/TasksRoutes");
 app.use(TasksRoutes);
-// const DataRoutes = require("./routes/DataRoutes")
-
-// const data = "./data.csv";
-// console.log(data);
+// const FoxesRoutes = require("./routes/FoxesRoutes");
+// app.use(FoxesRoutes);
 
 
 
@@ -30,11 +34,27 @@ app.listen(3002, (err) => {
   console.log("Web server is now running on port 3002");
 });
 
-// fetch("./data.csv")
-// .then(res => res.json())
-// .then(json => {
-//   console.log(json);
+// const dataArr = [];
+
+// fs.readFile("data.csv", "utf8", function (err, data) {
+//   // dataArr = data.split(/\r?\n/); 
+//   console.log(data);
 // });
+
+// console.log(dataArr);
+
+
+// app.use(function (req) {
+//   if (req.method === "GET" && req.path === "/foxes" ) {
+//     fetch("https://randomfox.ca/floof/").then(response => response.json()).then(json => {
+//       console.log(json.image);
+//       return json;
+//     });
+//   }
+// });
+
+
+
 
 // <-----------handle bad request------------->
 app.use(function (request,response) {

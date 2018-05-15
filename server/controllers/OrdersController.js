@@ -18,18 +18,15 @@ module.exports.list = function list(request, response) {
   // console.log(orders);
 };
 
-module.exports.show = function show(request, response) {
-  const newId = request.params.id;
-  Order.find({id: newId}).exec().then(orderRes => {
-    return response.json(orderRes[0]);
-  });
-};
+
+// csv file node stet by step
 
 module.exports.create = function create(request, response) {
-  updateData();
+  const input = request.body;
   const newId = orders[orders.length - 1].id + 1;  
+  console.log(input);
   const newOrder = new Order(
-    {id: newId , body: request.body.body, postId: 1}
+    {id: newId , orderDate: input.orderDate, orderTime: input.orderTime, amount: input.amount}
       );
   newOrder.save().then(savedOrder => {
     updateData();
@@ -37,9 +34,3 @@ module.exports.create = function create(request, response) {
   });
 };
 
-module.exports.update = function update(request, response) {
-  return response.json({theId: request.params.id});
-};
-module.exports.remove = function remove(request, response) {
-  return response.json({});
-};

@@ -18,18 +18,21 @@ module.exports.list = function list(request, response) {
   // console.log(tasks);
 };
 
-module.exports.show = function show(request, response) {
-  const newId = request.params.id;
-  Task.find({id: newId}).exec().then(taskRes => {
-    return response.json(taskRes[0]);
-  });
-};
+// module.exports.show = function show(request, response) {
+//   const newId = request.params.id;
+//   Task.find({id: newId}).exec().then(taskRes => {
+//     return response.json(taskRes[0]);
+//   });
+// };
 
 module.exports.create = function create(request, response) {
   updateData();
+  const input = request.body;
+  console.log(input);
+  
   const newId = tasks[tasks.length - 1].id + 1;  
   const newTask = new Task(
-    {id: newId , body: request.body.body, postId: 1}
+    {id: newId , task: input.task, date: input.date}
       );
   newTask.save().then(savedTask => {
     updateData();
@@ -37,9 +40,4 @@ module.exports.create = function create(request, response) {
   });
 };
 
-module.exports.update = function update(request, response) {
-  return response.json({theId: request.params.id});
-};
-module.exports.remove = function remove(request, response) {
-  return response.json({});
-};
+
