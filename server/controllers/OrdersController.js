@@ -22,6 +22,7 @@ module.exports.list = function list(request, response) {
 // csv file node stet by step
 
 module.exports.create = function create(request, response) {
+  updateData();
   const input = request.body;
   const newId = orders[orders.length - 1].id + 1;  
   console.log(input);
