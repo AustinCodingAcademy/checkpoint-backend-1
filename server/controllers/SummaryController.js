@@ -23,7 +23,6 @@ module.exports.tickets = function(request, response) {
 
 function loadCsv() {
   const csv = fs.readFileSync("./server/data.csv", "utf8");
-  console.log(csv);
   const lines = csv.split("\n");
   const fields = lines[0].split(",");
   const values = lines[1].split(","); 
