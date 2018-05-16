@@ -26,7 +26,7 @@ Your company's front end team has completed a business dashboard requested by ma
 
 
 ### MVC
-* create Routes, Models and Controllers
+<!-- * create Routes, Models and Controllers -->
 * Look at server/state.js
 * create mongoose models that follow the example data
 * create get routes, use the Models to get data from the database
@@ -41,7 +41,7 @@ Your company's front end team has completed a business dashboard requested by ma
 
 ### node-fetch
 * The ceo likes to look at pictures of foxes while reading business reports
-* install node-fetch
+<!-- * install node-fetch -->
 * make a route for /foxes
 * make a http get call to https://randomfox.ca/floof/
 * send back the image value

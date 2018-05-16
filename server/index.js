@@ -7,9 +7,18 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://check1:shelby@ds147070.mlab.com:47070/advanced-express-practice');
 app.use(bodyParser.json());
 
+app.get('/messages', function (req, res) {
+    res.send('task route')
+});
 
+app.get('/orders', function (req, res) {
+    res.send('task route')
+});
 
-const bodyParser = require('body-parser');
+app.get('/tasks', function (req, res) {
+    res.send('task route')
+});
+
 app.listen(3001, (err) => {
 if (err) {
     return console.log('Error', err)
