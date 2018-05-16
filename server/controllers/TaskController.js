@@ -20,7 +20,6 @@ module.exports.show = function (request, response) {
 
 module.exports.create = function (request, response) {
   const body = request.body;
-  console.log(body);
   const newTask = new Task({
     task: body.name,
     date: body.date
