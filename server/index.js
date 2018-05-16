@@ -1,4 +1,4 @@
-// const fetch = require("node-fetch");
+const fetch = require("node-fetch");
 const fs = require("fs");
 const express = require("express");
 const app = express();
@@ -10,52 +10,68 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://mimitch:Bladerunner80@ds117590.mlab.com:17590/checkpoint-one");
 
 // issues:
-// 3. How do I read the .csv file and parse the data??
-// 4. why is the fox fetch not working? Where do I use routes/fetch? I am getting back the image URL but the app just freezes up
+// 4. why is the fox fetch not working? Where do I use routes/fetch? 
+// I am getting back the image URL but the app just freezes up
 
-
+// const FoxesRoutes = require("./routes/FoxesRoutes");
+// app.use(FoxesRoutes);
 const MessagesRoutes = require("./routes/MessagesRoutes");
 app.use(MessagesRoutes);
 const OrdersRoutes = require("./routes/OrdersRoutes");
 app.use(OrdersRoutes);
 const TasksRoutes = require("./routes/TasksRoutes");
 app.use(TasksRoutes);
-// const FoxesRoutes = require("./routes/FoxesRoutes");
-// app.use(FoxesRoutes);
 
-app.get(function (req, res) {
-  fs.readFile("/data.csv", "utf8", function (err, data) {
-  // dataArr = data.split(/\r?\n/); 
-    console.log(data);
-    return res.send(data);
+
+
+// app.get("/foxes", function () {
+//   fetch("https://randomfox.ca/floof/").then(res => res.json()).then(json => {
+//     console.log(json.image);
+//     return json.image;
+//   });
+// });
+
+
+
+app.get("/dateTime",(req,res ) => res.send(new Date().toLocaleString()));
+
+app.get("/newComments", function (req, res) {
+  fs.readFile("server/data.csv", "utf8", function (err, data) {
+    const dataArr = data.split("\n")[1]; 
+    return res.send(dataArr.split(",")[0]);
+  });
+});
+
+app.get("/newTasks", function (req, res) {
+  fs.readFile("server/data.csv", "utf8", function (err, data) {
+    const dataArr = data.split("\n")[1]; 
+    return res.send(dataArr.split(",")[1]);
+  });
+});
+
+app.get("/newOrders", function (req, res) {
+  fs.readFile("server/data.csv", "utf8", function (err, data) {
+    const dataArr = data.split("\n")[1]; 
+    return res.send(dataArr.split(",")[2]);
+  });
+});
+
+app.get("/tickets", function (req, res) {
+  fs.readFile("server/data.csv", "utf8", function (err, data) {
+    const dataArr = data.split("\n")[1]; 
+    return res.send(dataArr.split(",")[3]);
   });
 });
 
 
-app.listen(3002, (err) => {
+const port = 3002;
+
+app.listen(port, (err) => {
   if (err) {
     return console.log("Error", err);
   } 
-  console.log("Web server is now running on port 3002");
+  console.log("Web server is now running on port " + port);
 });
-
-// const dataArr = [];
-
-
-
-// console.log(dataArr);
-
-
-// app.use(function (req) {
-//   if (req.method === "GET" && req.path === "/foxes" ) {
-//     fetch("https://randomfox.ca/floof/").then(response => response.json()).then(json => {
-//       console.log(json.image);
-//       return json;
-//     });
-//   }
-// });
-
-
 
 
 // <-----------handle bad request------------->
