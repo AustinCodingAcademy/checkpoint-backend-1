@@ -6,10 +6,10 @@
 Your company's front end team has completed a business dashboard requested by management. You need to build the data server that will provide the front end client with the data it needs to show.
 
 ### Create a server
-* npm isntall express
-* server/index.js
-* listen on port 3001
-* connect to your mlab database
+<!-- * npm isntall express -->
+<!-- * server/index.js -->
+<!-- * listen on port 3001 -->
+<!-- * connect to your mlab database -->
 
 ### Routes
 * create get routes.
@@ -21,8 +21,8 @@ Your company's front end team has completed a business dashboard requested by ma
   * /tickets
 
 ### Database
-* use mlab to create a database
-* add 3 collections: messages, tasks, orders
+<!-- * use mlab to create a database -->
+<!-- * add 3 collections: messages, tasks, orders -->
 
 
 ### MVC
