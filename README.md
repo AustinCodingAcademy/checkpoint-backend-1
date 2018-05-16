@@ -1,5 +1,5 @@
 ### Setup
-* Fork, Clone, npm install, npm start
+<!-- * Fork, Clone, npm install, npm start -->
 
 
 ### Summary
