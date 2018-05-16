@@ -50,6 +50,9 @@ Your company's front end team has completed a business dashboard requested by ma
 ### Run Server
 * start your server with "node index.js" and refresh the client webpage to make sure the data is populating properly. 
 
+NOTE: Requires a .env file with SECRET.  E.g.,
+
+SECRET="mongodb://<user>:<pwd>!<host>:<port>/<db>"
 
 
 
