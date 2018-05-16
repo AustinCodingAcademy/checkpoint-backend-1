@@ -24,12 +24,14 @@ app.use(TasksRoutes);
 
 
 
-// app.get("/foxes", function () {
-//   fetch("https://randomfox.ca/floof/").then(res => res.json()).then(json => {
-//     console.log(json.image);
-//     return json.image;
-//   });
-// });
+app.get("/foxes", function (req, response) {
+  fetch("https://randomfox.ca/floof/").then(res => res.json()).then(json => {
+    // console.log(json.image);
+    response.json(json.image);
+    // return response.json.image;
+  });
+});
+
 
 
 
