@@ -1,8 +1,10 @@
 
 
 module.exports.list = function list(req, res) {
+    const date = new Date()
 
-    return res.json(Date())
+    console.log(date.toLocaleTimeString())
+    return res.json(date.toLocaleTimeString())
   };
 //   module.exports.show = function show(req, res) {
 //     return OrderModel.findById(req.params.id).exec().then(order => res.json(order)); 

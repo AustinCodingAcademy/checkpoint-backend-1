@@ -5,7 +5,7 @@ const {list,show,create,update,remove} = require( "../controllers/DateTimeContro
 
 router.get("/dateTime", list);
 // router.get("/dateTime/:id", show);
-router.post("/dateTime", create);
+// router.post("/dateTime", create);
 // router.put("/contacts/:id", update);
 // router.delete("/contacts/:id", remove);
 

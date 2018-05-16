@@ -22,6 +22,7 @@ const NewOrdersRoutes = require("./routes/NewOrdersRoutes.js");
 const NewCommentsRoutes = require("./routes/NewCommentsRoutes.js");
 const TicketsRoutes = require("./routes/TicketsRoutes.js");
 const DateTimeRoutes = require("./routes/DateTimeRoutes.js");
+const FoxRoutes = require("./routes/FoxRoutes.js");
 
 
 app.use(TaskRoutes);
@@ -32,6 +33,7 @@ app.use(NewCommentsRoutes);
 app.use(NewOrdersRoutes);
 app.use(TicketsRoutes);
 app.use(DateTimeRoutes);
+app.use(FoxRoutes);
 
 
 
