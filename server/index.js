@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+
 const fs = require("fs");
 const express = require("express");
 const app = express();
@@ -9,30 +9,16 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://mimitch:Bladerunner80@ds117590.mlab.com:17590/checkpoint-one");
 
-// issues:
-// 4. why is the fox fetch not working? Where do I use routes/fetch? 
-// I am getting back the image URL but the app just freezes up
 
-// const FoxesRoutes = require("./routes/FoxesRoutes");
-// app.use(FoxesRoutes);
+
+const FoxesRoutes = require("./routes/FoxesRoutes");
+app.use(FoxesRoutes);
 const MessagesRoutes = require("./routes/MessagesRoutes");
 app.use(MessagesRoutes);
 const OrdersRoutes = require("./routes/OrdersRoutes");
 app.use(OrdersRoutes);
 const TasksRoutes = require("./routes/TasksRoutes");
 app.use(TasksRoutes);
-
-
-
-app.get("/foxes", function (req, response) {
-  fetch("https://randomfox.ca/floof/").then(res => res.json()).then(json => {
-    // console.log(json.image);
-    response.json(json.image);
-    // return response.json.image;
-  });
-});
-
-
 
 
 app.get("/dateTime",(req,res ) => res.send(new Date().toLocaleString()));
