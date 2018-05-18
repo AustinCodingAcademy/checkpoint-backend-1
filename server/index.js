@@ -8,11 +8,11 @@ mongoose.connect('mongodb://check1:shelby@ds147070.mlab.com:47070/advanced-expre
 app.use(bodyParser.json());
 
 app.get('/messages', function (req, res) {
-    res.send('task route')
+    res.send('message route')
 });
 
 app.get('/orders', function (req, res) {
-    res.send('task route')
+    res.send('order route')
 });
 
 app.get('/tasks', function (req, res) {

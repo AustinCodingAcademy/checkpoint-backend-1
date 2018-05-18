@@ -12,7 +12,7 @@ Your company's front end team has completed a business dashboard requested by ma
 <!-- * connect to your mlab database -->
 
 ### Routes
-* create get routes.
+<!-- * create get routes. -->
 * look at data.csv. read this file and pull the information out of it
   * /dateTime - return the current time
   * /newComments
@@ -27,8 +27,8 @@ Your company's front end team has completed a business dashboard requested by ma
 
 ### MVC
 <!-- * create Routes, Models and Controllers -->
-* Look at server/state.js
-* create mongoose models that follow the example data
+<!-- * Look at server/state.js -->
+<!-- * create mongoose models that follow the example data -->
 * create get routes, use the Models to get data from the database
   * /tasks
   * /orders
