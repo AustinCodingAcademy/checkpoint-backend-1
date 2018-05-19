@@ -3,6 +3,7 @@ const fs = require('fs')
 const csv = require('fast-csv')
 const parser = require('body-parser')
 const mongoose = require('mongoose')
+const fetch = require('node-fetch')
 
 //Connect to database
 const db = mongoose.connection
@@ -17,7 +18,7 @@ db.once('open',()=>console.log('Connected to DB'))
 const app = express()
 
 app.use(parser.json())
-
+// app.use(fetch)
 //connect routers
 app.use(require('./routers/messageRouter'))
 app.use(require('./routers/orderRouter'))
@@ -58,4 +59,13 @@ app.get('/tickets', (req,res)=>{
   )
 })
 
-app.listen(3001, () => console.log('Listening on port 3001!'))
+fetch('https://randomfox.ca/floof/')
+.then(response => response.json())
+.then(json => {
+  app.get('/foxes', (req,res)=>{
+    res.json(json.image)
+  })
+})
+
+
+app.listen(3003, () => console.log('Listening on port 3001!'))

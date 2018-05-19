@@ -15,7 +15,16 @@ module.exports.show = ((req, res)=>{
   })
 })
 
-module.exports.create = ((req, res)=>res.json({}))
+module.exports.create = ((req, res)=>{
+  const newTask = new Task({
+    task: req.body.name,
+    date: req.body.date
+  })
+  newTask.save()
+  .then(savedTask=>{
+    res.json(savedTask)
+  })
+})
 
 module.exports.update = ((req, res)=>res.json({theId: req.params.id}))
 
