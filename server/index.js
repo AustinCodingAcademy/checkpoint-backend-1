@@ -6,7 +6,7 @@ const parser = require('body-parser')
 const mongoose = require('mongoose')
 const fetch = require('node-fetch')
 
-//Connect to database 
+//Connect to database
 const db = mongoose.connection
 mongoose.connect(process.env.MDB?process.env.MDB:console.log(
   '-----------WARNING NO ENV PATH DETECTED...ADD .ENV FILE---------'))
