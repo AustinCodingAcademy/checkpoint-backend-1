@@ -7,6 +7,15 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://check1:shelby@ds147070.mlab.com:47070/advanced-express-practice');
 app.use(bodyParser.json());
 
+const messageRoutes = require("./routes/messageRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const taskRoutes = require("./routes/taskRoutes");
+
+
+app.use(messageRoutes);
+app.use(orderRoutes);
+app.use(taskRoutes);
+
 app.get('/messages', function (req, res) {
     res.send('message route')
 });
