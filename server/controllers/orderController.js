@@ -17,8 +17,8 @@ module.exports.show = ((req, res)=>{
 
 module.exports.create = ((req, res)=>{
   const newOrder = new Order({
-    orderDate: new Date(),
-    orderTime: new Date(),
+    orderDate: Date(),
+    orderTime: Date(),
     amount: req.body.amount
   })
   newOrder.save()
