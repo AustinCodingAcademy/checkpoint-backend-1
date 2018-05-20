@@ -1,7 +1,7 @@
 let fetch = require('node-fetch');
 
 module.exports.list = function list(req, res) {
-    fetch("https://randomfox.ca/floof/").then(r=>r.json()).then(d=>res.json(d.image)); 
+    fetch("https://randomfox.ca/floof/").then(res=>res.json()).then(d=>res.json(d.image)); 
 };
 // module.exports.show = function show(req, res) {
 //     fetch("https://randomfox.ca/floof/").then(r=>r.json()).then(d=>{
