@@ -1,14 +1,14 @@
-const orderModel = require("../models/orderModel");
+const Order = require("../models/orderModel");
 
 module.exports.list = ((req,res) => {
-    prderModel.find({}).exec()
+    Order.find({}).exec()
     .then(orders => {
       res.json(orders)
     })
   })
   
   module.exports.show = ((req, res) => {
-    orderModel.findById({"_id":req.params.id}).exec()
+    Order.findById(req.params.id).exec()
     .then(order => {
       res.json(order)
     })

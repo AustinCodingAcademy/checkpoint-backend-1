@@ -1,14 +1,14 @@
-const messageModel = require("../models/messageModel");
+const Message = require("../models/MessageModel");
 
 module.exports.list = ((req, res) => {
-    messageModel.find({}).exec()
-    .then(message => {
-        res.json(message)
+    Message.find({}).exec()
+    .then(messages => {
+        res.json(messages)
     })
 })
 
 module.exports.show = ((req, res) => {
-    messageModel.findById({"_id": req.params.id}).exec()
+    Message.findById(req.params.id).exec()
     .then(message => {
         res.json(message)
     })

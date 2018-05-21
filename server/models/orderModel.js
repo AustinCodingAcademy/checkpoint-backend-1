@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
-  id: {
-    required: true,
-    type: Number
-  },
   orderDate: {
     required: true,
     type: String

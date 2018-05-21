@@ -13,12 +13,12 @@ Your company's front end team has completed a business dashboard requested by ma
 
 ### Routes
 <!-- * create get routes. -->
-* look at data.csv. read this file and pull the information out of it
-  * /dateTime - return the current time
-  * /newComments
-  * /newTasks
-  * /newOrders
-  * /tickets
+<!-- * look at data.csv. read this file and pull the information out of it -->
+  <!-- * /dateTime - return the current time -->
+  <!-- * /newComments -->
+  <!-- * /newTasks -->
+  <!-- * /newOrders -->
+  <!-- * /tickets -->
 
 ### Database
 <!-- * use mlab to create a database -->
@@ -40,11 +40,11 @@ Your company's front end team has completed a business dashboard requested by ma
 
 
 ### node-fetch
-* The ceo likes to look at pictures of foxes while reading business reports
+<!-- * The ceo likes to look at pictures of foxes while reading business reports -->
 <!-- * install node-fetch -->
-* make a route for /foxes
-* make a http get call to https://randomfox.ca/floof/
-* send back the image value
+<!-- * make a route for /foxes -->
+<!-- * make a http get call to https://randomfox.ca/floof/ -->
+<!-- * send back the image value -->
 
 
 ### Run Server

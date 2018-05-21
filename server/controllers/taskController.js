@@ -1,14 +1,14 @@
-const taskModel = require("../models/taskModel");
+const Task = require("../models/taskModel");
 
 module.exports.list = ((req, res) => {
-    task.find({}).exec()
-    .then(task=>{
-        res.json(task)
+    Task.find({}).exec()
+    .then(tasks => {
+        res.json(tasks)
     })
 })
 
 module.exports.show = ((req, res) => {
-    taskModel.findById({"_id": req.params.id}).exec()
+    Task.findById(req.params.id).exec()
     .then(task => {
         res.json(task)
     })
