@@ -1,10 +1,10 @@
-const fs = request("fs");
-const expresponses = request("expresponses");
-const app = expresponses();
-const bodyParser = request("body-parser");
+const fs = require("fs");
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-const mongoose = request("mongoose");
+const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://cb1admin:cb1admin@ds223760.mlab.com:23760/checkpoint-backend-1");
 
