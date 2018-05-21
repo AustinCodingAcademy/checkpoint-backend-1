@@ -27,15 +27,15 @@ function TasksPanel(props) {
             <h3 className="panel-title"><i className="fa fa-clock-o fa-fw"></i> Create New</h3>
         </div>
         <div className="panel-body">
-            <div className="list-group">
+            <div className="list-group" style={{display:"flex", flexDirection:"column"}} >
     
-               Name: <input id="taskName" />
+               Task: <input id="taskName" />
                Date: <input id="taskDate"/>
                <button onClick={
                 ()=>{
-                    let name = document.getElementById("taskName").value;
+                    let task = document.getElementById("taskName").value;
                     let date = document.getElementById("taskDate").value;
-                    createData.task({name,date});
+                    createData.task({task,date});
                 }
                }>Create</button>
                  

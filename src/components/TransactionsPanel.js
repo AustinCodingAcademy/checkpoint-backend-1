@@ -36,17 +36,18 @@ function TransactionsPanel(props) {
             <h3 className="panel-title"><i className="fa fa-clock-o fa-fw"></i> Create New</h3>
         </div>
         <div className="panel-body">
-            <div className="list-group">
-    
-               Name: <input id="orderDate" />
-               Date: <input id="orderTime"/>
+            <div className="list-group" style={{display:"flex", flexDirection:"column"}}>
+               Name: <input id="orderName"/>
+               Date: <input id="orderDate" />
+               Time: <input id="orderTime"/>
                Amount: <input id="orderAmount"/>
                <button onClick={
                 ()=>{
+                    let name = document.getElementById("orderName").value;
                     let date = document.getElementById("orderDate").value;
                     let time = document.getElementById("orderTime").value;
                     let amount = document.getElementById("orderAmount").value;
-                    createData.order({orderDate:date,orderTime:time,amount});
+                    createData.order({name, orderDate:date, orderTime:time, amount});
                 }
                }>Create</button>
                  
