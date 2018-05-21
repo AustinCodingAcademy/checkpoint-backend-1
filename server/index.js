@@ -18,7 +18,7 @@ const taskRoutes = require("./routes/taskRoutes");
 app.use(messageRoutes);
 app.use(orderRoutes);
 app.use(taskRoutes);
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 
 app.get('/dateTime', (req, res) => res.send(Date()));
