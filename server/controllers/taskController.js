@@ -8,15 +8,15 @@ module.exports.list = ((req, res) => {
 })
 
 module.exports.show = ((req, res) => {
-    Task.findById(req.params.id).exec()
+    Task.findById({"_id":req.params.id}).exec()
     .then(task => {
         res.json(task)
     })
 })
 
 module.exports.create = ((req, res)=>{
-    const newTask = new task({
-      task: req.body.name,
+    const newTask = new Task({
+      task: req.body.task,
       date: req.body.date
     })
     newTask.save()

@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
     required: true,
     type: String
   },
-  ammount: {
+  amount: {
     required: true,
     type: String
   }

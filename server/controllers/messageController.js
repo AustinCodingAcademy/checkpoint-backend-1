@@ -8,7 +8,7 @@ module.exports.list = ((req, res) => {
 })
 
 module.exports.show = ((req, res) => {
-    Message.findById(req.params.id).exec()
+    Message.findById({"_id":req.params.id}).exec()
     .then(message => {
         res.json(message)
     })
