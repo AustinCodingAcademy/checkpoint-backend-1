@@ -22,7 +22,7 @@ app.use(newComments);
 app.use(newOrders);
 app.use(newTasks);
 
-app.get("/dateTime", (request, ressponse)=>response.send(Date()));
+app.get("/dateTime", (request, response)=>response.send(Date()));
 
 fs.readFile("server/data.csv", "utf8",(err,data)=>{
   if (err) throw err
@@ -38,6 +38,14 @@ fs.readFile("server/data.csv", "utf8",(err,data)=>{
   })
   app.get ("/tickets", (request,response)=>{
     response.send(hardData[1].split(",")[3])
+  })
+});
+
+fetch('https://randomfox.ca/floof/')
+.then(response => response.json())
+.then(json => {
+  app.get('/foxes', (req,res)=>{
+    res.json(json.image)
   })
 })
 

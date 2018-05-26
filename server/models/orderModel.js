@@ -1,18 +1,5 @@
-const mongoose = require("mongoose");
+const mon = require('mongoose')
 
-const schema = new mongoose.Schema({
-  name: {
-    required: true,
-    type: String
-  },
-  date: {
-    required: true,
-    type: String
-  },
-  amount: {
-    required: true,
-    type: String
-  }
-});
+const schema = require('../schemas/orderSchema')
 
-module.exports = mongoose.model("newOrder", schema);
+module.exports = mon.model('Order',schema)

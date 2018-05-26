@@ -8,7 +8,7 @@ module.exports.list = function list(request, response) {
 };
 
 module.exports.show = function show(request, response) {
-  Task.findById(request.params.id).exec()
+  Task.findById({"_id":request.params.id}).exec()
   .then(task => {
     response.json(task);
   });

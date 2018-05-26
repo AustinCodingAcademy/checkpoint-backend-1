@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
   "task":{
-    required: true,
+    required: false,
     tupe: String
   },
   "date":{
