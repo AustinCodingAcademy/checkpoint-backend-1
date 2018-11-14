@@ -4,10 +4,16 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://scheatham:630Nagle@ds261247.mlab.com:61247/scheatham-checkpoint1");
 
-const fs = require('fs')
+const fs = require('fs');
 const app = express();
 
+const NewCommentRoutes = require("./routes/NewCommentRoutes");
+const NewOrderRoutes = require("./routes/NewOrderRoutes");
+const NewTaskRoutes = require("./routes/NewTaskRoutes");
+const TicketRoutes = require("./routes/TicketRoutes");
+
 app.use(parser.json())
+app.use(NewCommentRoutes);
 //Input routes here
 fs.readFile('./data.csv', 'utf8', (err, data) => {
     if (err) throw err;
