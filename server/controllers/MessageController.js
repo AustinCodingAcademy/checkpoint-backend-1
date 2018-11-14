@@ -1,23 +1,23 @@
-const CommentModel = require("../models/NewCommentModel");
+const MessageModel = require("../models/MessageModel");
 
 module.exports.list = (req, res)=>{
-    CommentModel.find({}).exec().then((comments)=>{
-        return res.json(comments)
+    MessageModel.find({}).exec().then((messages)=>{
+        return res.json(messages)
     })
 }
 module.exports.show = (req, res)=>{
-    CommentModel.findById(req.params.id).exec().then((comment)=>{
-        return res.json(comment)
+    MessageModel.findById(req.params.id).exec().then((message)=>{
+        return res.json(message)
     })
 }
 module.exports.create = (req, res)=>{
-    const c = new CommentModel({
+    const m = new MessageModel({
         name: req.body.name,
         date: req.body.date,
         message: req.body.message
     });
-    c.save().then(savedComment=>{
-        return res.json(savedComment)
+    m.save().then(savedMessage=>{
+        return res.json(savedMessage)
     })
 }
 module.exports.update = (req, res)=>{

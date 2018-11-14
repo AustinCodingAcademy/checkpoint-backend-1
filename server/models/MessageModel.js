@@ -12,4 +12,4 @@ const schema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("Comment", schema);
+module.exports = mongoose.model("Message", schema);
