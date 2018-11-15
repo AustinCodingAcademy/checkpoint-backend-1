@@ -9,9 +9,12 @@ const app = express();
 
 const MessageRoutes = require("./routes/MessageRoutes");
 const OrderRoutes = require("./routes/OrderRoutes");
+const TaskRoutes = require("./routes/TaskRoutes");
 
 app.use(parser.json())
 app.use(MessageRoutes);
+app.use(OrderRoutes);
+app.use(TaskRoutes);
 //Input routes here
 fs.readFile('./data.csv', 'utf8', (err, data) => {
     if (err) throw err;

@@ -11,7 +11,7 @@ module.exports.show = (req, res)=>{
     })
 }
 module.exports.create = (req, res)=>{
-    const o = new MessageModel({
+    const o = new OrderModel({
         orderDate: req.body.orderDate,
         orderTime: req.body.orderTime,
         amount: req.body.amount
