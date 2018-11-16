@@ -8,7 +8,6 @@ mongoose.connect("mongodb://kesto:password1@ds237713.mlab.com:37713/checkpoint-b
 // file system
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const app = express();
 
 // csv to json conversion
 const csvFilePath='./data.csv';
@@ -17,10 +16,21 @@ csv().fromFile(csvFilePath).then((jsonObj) => {
    console.log(jsonObj.tickets);
 })
 
-const MessageRoutes = require("./routes/MessageRoutes");
-const OrderRoutes = require("./routes/OrderRoutes");
-const TaskRotues = require("./routes/TaskRoutes");
+const messageRouter = require("./routes/MessageRoutes");
+const orderRouter = require("./routes/OrderRoutes");
+const taskRouter = require("./routes/TaskRoutes");
 
+const app = express();
+// set static path
+app.use(express.static('public'));
+// body-parser middleware
+app.use(bodyParser.json());
+// bring in routers with routes and controllers
+app.use(messageRouter);
+app.use(orderRouter);
+app.use(taskRouter);
+
+// app is listening to port 3001
 app.listen(port, (err) => {
       if (err) {
       console.log(err);
