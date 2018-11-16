@@ -1,7 +1,7 @@
 const MessageModel = require("../models/MessageModel");
-const exports = module.exports;
+const ex = module.exports;
 
-exports.list = (req, res) => {
+ex.list = (req, res) => {
    MessageModel.find({}).exec().then(messages => {
       return res.json(messages);
    })
@@ -11,14 +11,14 @@ exports.list = (req, res) => {
    })
 }
 
-exports.show = (req, res) => {
+ex.show = (req, res) => {
    MessageModel.findById(req.params.id).exec()
    .then(msg => {
       return res.json(msg);
    })
 }
 
-exports.create = (req, res) => {
+ex.create = (req, res) => {
    const message = new MessageModel({
       name: req.body.name,
       date: req.body.date,
@@ -28,22 +28,22 @@ exports.create = (req, res) => {
    return res.json(message);
 }
 
-exports.update = (req, res) => {
-   MessageModel.findById(req.params.id).exec()
-   .then(msg => {
-      msg.name = req.body.name,
-      msg.date = req.body.date,
-      msg.message = req.body.message;
-      msg.save();
-      return res.json(msg);
-   });
-}
+// ex.update = (req, res) => {
+//    MessageModel.findById(req.params.id).exec()
+//    .then(msg => {
+//       msg.name = req.body.name,
+//       msg.date = req.body.date,
+//       msg.message = req.body.message;
+//       msg.save();
+//       return res.json(msg);
+//    });
+// }
 
-exports.remove = (req, res) => {
-   MessageModel.findById(req.params.id).exec()
-   .then(msg => {
-      msg.active = false;
-      msg.save();
-      return res.json(msg);
-   })
-}
+// ex.remove = (req, res) => {
+//    MessageModel.findById(req.params.id).exec()
+//    .then(msg => {
+//       msg.active = false;
+//       msg.save();
+//       return res.json(msg);
+//    })
+// }

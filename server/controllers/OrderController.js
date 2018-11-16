@@ -1,7 +1,7 @@
 const OrderModel = require("../models/OrderModel");
-const exports = module.exports;
+const ex = module.exports;
 
-exports.list = (req, res) => {
+ex.list = (req, res) => {
    OrderModel.find({}).exec().then(orders => {
       return res.json(orders);
    })
@@ -11,14 +11,14 @@ exports.list = (req, res) => {
    })
 }
 
-exports.show = (req, res) => {
+ex.show = (req, res) => {
    OrderModel.findById(req.params.id).exec()
    .then(order => {
       return res.json(order);
    })
 }
 
-exports.create = (req, res) => {
+ex.create = (req, res) => {
    const order = new OrderModel({
       name: req.body.orderDate,
       date: req.body.orderTime,
@@ -28,22 +28,22 @@ exports.create = (req, res) => {
    return res.json(order);
 }
 
-exports.update = (req, res) => {
-   OrderModel.findById(req.params.id).exec()
-   .then(order => {
-      order.orderDate = req.body.orderDate,
-      order.orderTime = req.body.orderTime,
-      order.amount = req.body.amount;
-      order.save();
-      return res.json(order);
-   });
-}
+// ex.update = (req, res) => {
+//    OrderModel.findById(req.params.id).exec()
+//    .then(order => {
+//       order.orderDate = req.body.orderDate,
+//       order.orderTime = req.body.orderTime,
+//       order.amount = req.body.amount;
+//       order.save();
+//       return res.json(order);
+//    });
+// }
 
-exports.remove = (req, res) => {
-   OrderModel.findById(req.params.id).exec()
-   .then(order => {
-      order.active = false;
-      order.save();
-      return res.json(order);
-   })
-}
+// ex.remove = (req, res) => {
+//    OrderModel.findById(req.params.id).exec()
+//    .then(order => {
+//       order.active = false;
+//       order.save();
+//       return res.json(order);
+//    })
+// }
