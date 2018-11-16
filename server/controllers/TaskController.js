@@ -20,7 +20,7 @@ ex.show = (req, res) => {
 
 ex.create = (req, res) => {
    const task = new TaskModel({
-      name: req.body.task,
+      task: req.body.task,
       date: req.body.date,
    });
    task.save();

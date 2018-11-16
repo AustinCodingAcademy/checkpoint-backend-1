@@ -9,6 +9,12 @@ mongoose.Promise = global.Promise;
 // connect to personal mongoDB database on mlab
 mongoose.connect("mongodb://kesto:password1@ds237713.mlab.com:37713/checkpoint-backend-1");
 
+const app = express();
+// set static path
+app.use(express.static('public'));
+// body-parser middleware
+app.use(bodyParser.json());
+
 // grabbing csv data and storing in a variable
 const csv = fs.readFileSync('./data.csv', 'utf8');
 
@@ -33,12 +39,6 @@ const data = csvToJson(csv);
 const messageRouter = require("./routes/MessageRoutes");
 const orderRouter = require("./routes/OrderRoutes");
 const taskRouter = require("./routes/TaskRoutes");
-
-const app = express();
-// set static path
-app.use(express.static('public'));
-// body-parser middleware
-app.use(bodyParser.json());
 
 app.get('/dateTime', (req, res) => {
    res.send(new Date());

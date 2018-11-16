@@ -20,10 +20,10 @@ ex.show = (req, res) => {
 
 ex.create = (req, res) => {
    const order = new OrderModel({
-      name: req.body.orderDate,
-      date: req.body.orderTime,
-      order: req.body.amount
-   });
+      orderDate: req.body.orderDate,
+      orderTime: req.body.orderTime,
+      amount: req.body.amount
+   })
    order.save();
    return res.json(order);
 }
