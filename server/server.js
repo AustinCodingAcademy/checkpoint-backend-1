@@ -1,20 +1,17 @@
 const express = require('express');
 const port = 3001;
+const bodyParser = require("body-parser");
+const fetch = require("node-fetch");
 const mongoose = require("mongoose");
 // setup mongoDB connection
 mongoose.Promise = global.Promise;
 // connect to personal mongoDB database on mlab
 mongoose.connect("mongodb://kesto:password1@ds237713.mlab.com:37713/checkpoint-backend-1");
-// file system
-const fs = require("fs");
-const bodyParser = require("body-parser");
 
 // csv to json conversion
 const csvFilePath='./data.csv';
 const csv = require('csvtojson');
-csv().fromFile(csvFilePath).then((jsonObj) => {
-   console.log(jsonObj.tickets);
-})
+const data = csv().fromFile(csvFilePath);
 
 const messageRouter = require("./routes/MessageRoutes");
 const orderRouter = require("./routes/OrderRoutes");
@@ -25,6 +22,30 @@ const app = express();
 app.use(express.static('public'));
 // body-parser middleware
 app.use(bodyParser.json());
+
+app.get('/dateTime', (req, res) => {
+   res.send(new Date());
+})
+app.get('/newComments', (req, res) => {
+   res.send(data.new_comments);
+})
+app.get('/newTasks', (req, res) => {
+   res.send(data.new_tasks);
+})
+app.get('/newOrders', (req, res) => {
+   res.send(data.new_orders);
+})
+app.get('/tickets', (req, res) => {
+   res.send(data.tickets);
+})
+app.get('/foxes', (req, res) => {
+   fetch('https://randomfox.ca/floof/')
+   .then(data => data.json())
+   .then(json => {
+      res.send(json.image);
+   })
+})
+
 // bring in routers with routes and controllers
 app.use(messageRouter);
 app.use(orderRouter);
@@ -38,17 +59,3 @@ app.listen(port, (err) => {
       console.log(`listening on port ${port}`);
    }
 }) 
-// route
-app.use('/', (req, res) => {
-   res.send('working');
-})
-
-// controller
-// const fnc = function(req, res) {
-//    Profile.find()
-//    .then(res => res.json())
-//    .then(data => res.json(data))
-// }
-
-// app.get('/', fnc);
-
