@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require('fs');
-//const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
 const MessageRoutes  = require("./routes/MessageRoutes");
 const OrdersRoutes  = require("./routes/OrdersRoutes");
@@ -48,11 +48,11 @@ app.use(TasksRoutes);
 
 
 //foxy fetch
-// fetch("https://randomfox.ca/floof/")
-// .then(res => res.json())
-// .then(json => {
-//     app.get("/foxes", (req, res)=>{
-//         res.json(json.image)
-//     })
-// })
+app.get("/foxes", (req, res)=>{
+    fetch("https://randomfox.ca/floof/")
+    .then(res => res.json())
+    .then(json => {
+        res.json(json.image)
+    })
+})
 
