@@ -4,7 +4,10 @@
   "description": "* Fork, Clone, npm install, npm start * npm start will bring up the web page, it will not start the server * you need to start the server manually",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nf start",
+    "react-app": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -24,5 +27,9 @@
     "prop-types": "^15.5.8",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
-  }
+  },
+  "devDependencies": {
+    "react-scripts": "0.7.0"
+  },
+  "proxy": "http://localhost:3001"
 }
