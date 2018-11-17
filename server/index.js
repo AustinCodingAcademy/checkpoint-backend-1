@@ -6,6 +6,7 @@ mongoose.connect("mongodb://scheatham:630Nagle@ds261247.mlab.com:61247/scheatham
 
 const fs = require('fs');
 const app = express();
+const fetch = require('node-fetch');
 
 const MessageRoutes = require("./routes/MessageRoutes");
 const OrderRoutes = require("./routes/OrderRoutes");
@@ -15,13 +16,16 @@ app.use(parser.json())
 app.use(MessageRoutes);
 app.use(OrderRoutes);
 app.use(TaskRoutes);
-//Input routes here
+
 fs.readFile('./data.csv', 'utf8', (err, data) => {
     if (err) throw err;
-    // console.log(data);
     const dataSent = data.split('\n');
-    // console.log(dataSent[1].split(','))
     const dataNums = dataSent[1].split(',');
+    
+    app.get('/dateTime', (req, res)=>{
+        let d = new Date();
+        res.send(d)
+    })
     app.get('/newComments', (req, res)=>{
         res.send(dataNums[0])
     })
@@ -36,8 +40,13 @@ fs.readFile('./data.csv', 'utf8', (err, data) => {
     })
 });
 
-
-
+fetch('https://randomfox.ca/floof')
+    .then(response=>response.json())
+    .then(json=>{
+        app.get('/foxes', (req, res)=>{
+            res.json(json.image)
+        })
+    })
 
 
 app.listen(3001, () => console.log('Listening on port 3001!'))
