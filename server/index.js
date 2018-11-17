@@ -6,11 +6,9 @@ const mon= require('mongoose')
 mon.Promise = global.Promise;
 mon.connect("mongodb://joeblow:zeke33@ds261247.mlab.com:61247/checkpoint_1");
 
+const app = express();
 
-// const orders = require("./orders");
-// const messages = require("./messages");
-// const tasks = require("./tasks");
-const app = express()
+app.get('.dateTime', (req, res) => res.send(Date()));
 
 fs.readFile('server/data.csv', 'utf8', (err, data) =>{
     if (err) throw err;
@@ -36,7 +34,7 @@ let OrderRoutes  = require("./routes/orderroutes");
 let MessageRoutes  = require("./routes/messageroutes");
 let TaskRoutes  = require("./routes/taskroutes");
 
-app.use(parser.json())
+app.use(parser.json());
 //Input routes here
 app.use(OrderRoutes);
 app.use(MessageRoutes);
