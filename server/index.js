@@ -21,7 +21,7 @@ fs.readFile('./data.csv', 'utf8', (err, data) => {
     if (err) throw err;
     const dataSent = data.split('\n');
     const dataNums = dataSent[1].split(',');
-    
+
     app.get('/dateTime', (req, res)=>{
         let d = new Date();
         res.send(d)
@@ -40,13 +40,13 @@ fs.readFile('./data.csv', 'utf8', (err, data) => {
     })
 });
 
-fetch('https://randomfox.ca/floof')
-    .then(response=>response.json())
+app.get('/foxes', (req, res)=>{
+    fetch('https://randomfox.ca/floof')
+    .then(res=>res.json())
     .then(json=>{
-        app.get('/foxes', (req, res)=>{
-            res.json(json.image)
-        })
+        console.log(json)
+        res.json(json.image)
     })
-
+})
 
 app.listen(3001, () => console.log('Listening on port 3001!'))

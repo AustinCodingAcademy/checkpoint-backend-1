@@ -1,17 +1,17 @@
-const MessageModel = require("../models/MessageModel");
+const Message = require("../models/MessageModel");
 
 module.exports.list = (req, res)=>{
-    MessageModel.find({}).exec().then((messages)=>{
+    Message.find({}).exec().then((messages)=>{
         return res.json(messages)
     })
 }
 module.exports.show = (req, res)=>{
-    MessageModel.findById(req.params.id).exec().then((message)=>{
+    Message.findById(req.params.id).exec().then((message)=>{
         return res.json(message)
     })
 }
 module.exports.create = (req, res)=>{
-    const m = new MessageModel({
+    const m = new Message({
         name: req.body.name,
         date: req.body.date,
         message: req.body.message
