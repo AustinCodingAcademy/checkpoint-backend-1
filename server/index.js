@@ -42,12 +42,11 @@ app.use(TaskRoutes);
 
 
 
-
-fetch('https://randomfox.ca/floof/')
-.then(response => response.json())
-.then(json => {
-    app.get('/foxes', (req, res)=>{
-    res.json(json.image)
+app.get('/foxes', (req, res)=>{
+    fetch('https://randomfox.ca/floof/')
+    .then(res=> res.json())
+    .then(json => {
+    res.json(json.image);
 })
 })
 
