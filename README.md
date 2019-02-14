@@ -56,6 +56,9 @@ Your company's front end team has completed a business dashboard requested by ma
 * If everything is coded properly, the client webpage should show the data from the server
 * Use the network tab to inspect what http messages are being sent
 
+NOTE: Requires a .env file with SECRET.  E.g.,
+
+SECRET="mongodb://<user>:<pwd>!<host>:<port>/<db>"
 
 
 
