@@ -28,7 +28,6 @@ Your company's front end team has completed a business dashboard requested by ma
 * use mlab to create a database
 * add 3 collections: messages, tasks, orders
 
-
 ### MVC
 * create Routes, Models and Controllers
 * Look at server/state.js
@@ -42,7 +41,6 @@ Your company's front end team has completed a business dashboard requested by ma
   * /orders
   * /messages 
 
-
 ### node-fetch
 * The ceo likes to look at pictures of foxes while reading business reports
 * install node-fetch
@@ -50,13 +48,7 @@ Your company's front end team has completed a business dashboard requested by ma
 * make a http get call to https://randomfox.ca/floof/
 * send back the image value
 
-
 ### Run Server
 * Use postman to test that it is working
 * If everything is coded properly, the client webpage should show the data from the server
 * Use the network tab to inspect what http messages are being sent
-
-
-
-
-
