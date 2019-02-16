@@ -1,27 +1,27 @@
 {
   "name": "checkpoint-backend-1",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "eslint": "^3.14.0",
-    "eslint-plugin-babel": "^4.0.1",
-    "eslint-plugin-react": "^6.9.0",
-    "react-scripts": "0.7.0"
-  },
+  "version": "1.0.0",
+  "description": "* Fork, Clone, npm install, npm start",
+  "main": "index.js",
   "dependencies": {
-    "foreman": "^2.0.0",
-    "prop-types": "^15.5.8",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "body-parser": "^1.18.3",
+    "csv-parser": "^1.12.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.10",
+    "nan": "^2.11.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "nf start",
-    "lint": "eslint src",
-    "react-app": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "npm run lint && react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "proxy": "http://localhost:3001"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericbarrs/checkpoint-backend-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericbarrs/checkpoint-backend-1/issues"
+  },
+  "homepage": "https://github.com/ericbarrs/checkpoint-backend-1#readme"
 }
