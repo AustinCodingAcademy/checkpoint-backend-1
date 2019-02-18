@@ -11,7 +11,7 @@ module.exports.getData = function(dataRetrieved){
     "messages",
     "foxes"]
 
-    let fetches = routes.map((r)=>{
+    const fetches = routes.map((r)=>{
       return fetch("/" + r)
       .then(res=>res.json())
       .then(d=>done(d,r))
