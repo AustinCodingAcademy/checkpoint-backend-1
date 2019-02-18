@@ -4,8 +4,8 @@ import createData from "../createData";
 
 function TasksPanel(props) {
     var taskItems = [];
-    taskItems = props.tasks.map((t)=>{
-        return <TaskItem task={t} />
+    taskItems = props.tasks.map((t,index)=>{
+        return <TaskItem key={index} task={t} />
     });
   return (
     <div className="panel panel-default">
