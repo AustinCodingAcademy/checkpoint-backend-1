@@ -3,7 +3,6 @@ const Message = require("../models/MessageModel");
 exports.list = function list(request, response) {  
   Message.find(function (err, messages) {
     if (err) return console.error(err) 
-    console.log(messages)
     return response.json(messages)
   })
 }
