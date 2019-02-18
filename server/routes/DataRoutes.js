@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const filePath='../data.csv';
+const filePath='./server/data.csv';
 const csv = require("csvtojson");
-
-csv().fromFile(filePath).then(jsonObj=> console.log(jsonObj));
+csv().fromFile(filePath);
 
 router.get("/newDate", (request, response)=>{
     response.send(new Date);
@@ -19,7 +18,7 @@ router.get("/newComments", (request, response)=>{
 
 router.get("/newTasks", (request, response)=>{
     csv()
-    .fromFile(csvFilePath)
+    .fromFile(filePath)
     .then(jsonObj=>{
     response.send(jsonObj[0].new_tasks)
     });
@@ -27,7 +26,7 @@ router.get("/newTasks", (request, response)=>{
 
 router.get("/newOrders", (request, response)=>{
     csv()
-    .fromFile(csvFilePath)
+    .fromFile(filePath)
     .then(jsonObj=>{
     response.send(jsonObj[0].new_orders)
     });
@@ -35,20 +34,13 @@ router.get("/newOrders", (request, response)=>{
 
 router.get("/tickets", (request, response)=>{
     csv()
-    .fromFile(csvFilePath)
+    .fromFile(filePath)
     .then(jsonObj=>{
     response.send(jsonObj[0].tickets)
     });
 });
 
+module.exports = router;
 
-// const fs = require("fs");
-// let content;
-
-// app.get("/csvData",(request,res)=>{
-//     fs.readFile("../data.csv", function(data){
-//         res.json(data);
-//     })
-// })
 
 
