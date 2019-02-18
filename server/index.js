@@ -8,13 +8,14 @@ const messageRoutes = require("./routes/MessageRoutes");
 const orderRoutes = require("./routes/OrderRoutes");
 const taskRoutes = require("./routes/TaskRoutes");
 const foxRoute = require("./routes/FoxRoute");
+const dataRoutes = require("./routes/DataRoutes");
 
-const app = express();
 app.use(bodyParser.json());
 app.use(messageRoutes);
 app.use(orderRoutes);
 app.use(taskRoutes);
 app.use(foxRoute);
+app.use(dataRoutes);
 
 app.listen(3001, (err) => {
     if (err) {
