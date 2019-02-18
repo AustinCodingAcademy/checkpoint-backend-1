@@ -6,7 +6,7 @@ module.exports.getData = function(dataRetrieved){
     "newOrders",
     "tickets",
     "orders",
-    "taskItem",
+    // "taskItem",
     "tasks",
     "messages",
     "foxes"]
@@ -24,7 +24,7 @@ module.exports.getData = function(dataRetrieved){
         newOrders:"",
         tickets:"",
         orders:[],
-        taskItem:"",
+        // taskItem:"",
         tasks:[],
         messages:[],
         } ;
