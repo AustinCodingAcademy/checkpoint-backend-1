@@ -147,5 +147,5 @@ export default {
     orderDate: "9/13/2016",
     orderTime: "3:51 AM",
     amount: "$39.35"
-  }]
+  }],
 };
