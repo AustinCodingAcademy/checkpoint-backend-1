@@ -9,12 +9,14 @@ const orderRoutes = require("./Routes/order");
 const messageRoutes = require("./Routes/message")
 const taskRoutes = require("./Routes/task")
 const dataRoutes = require("./Routes/DataRoutes")
+const foxRoute = require("./Routes/foxes")
 
 app.use(bodyParser.json());
 app.use(orderRoutes);
 app.use(messageRoutes);
 app.use(taskRoutes);
-app.use(dataRoutes)
+app.use(dataRoutes);
+app.use(foxRoute)
 
 
 
