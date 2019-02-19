@@ -3,14 +3,18 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const messagesRoutes = require('./Routes/MessagesRoutes');
-const ordersRoutes = require('./Routes/OrdersRoutes');
-const tasksRoutes = require('./Routes/TasksRoutes');
+let tasks = require ('./state').tasks;
+let orders = require ('./state').orders;
+let messages = require('./state').messages;
+
+const messageRoutes = require('./Routes/MessageRoutes');
+const orderRoutes = require('./Routes/OrderRoutes');
+const taskRoutes = require('./Routes/TaskRoutes');
 
 app.use(bodyParser.json());
-app.use(messagesRoutes);
-app.use(ordersRoutes);
-app.use(tasksRoutes);
+app.use(messageRoutes);
+app.use(orderRoutes);
+app.use(taskRoutes);
 
 
 mongoose.connect('mongodb://jflores353:$T1nkyi25!@ds343895.mlab.com:43895/checkpoint1', {useNewUrlParser: true});
