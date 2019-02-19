@@ -6,12 +6,12 @@ module.exports.getData = function(dataRetrieved){
     "newOrders",
     "tickets",
     "orders",
-    "taskItem",
+    // "taskItem",
     "tasks",
     "messages",
     "foxes"]
 
-    let fetches = routes.map((r)=>{
+    const fetches = routes.map((r)=>{
       return fetch("/" + r)
       .then(res=>res.json())
       .then(d=>done(d,r))
@@ -24,7 +24,7 @@ module.exports.getData = function(dataRetrieved){
         newOrders:"",
         tickets:"",
         orders:[],
-        taskItem:"",
+        // taskItem:"",
         tasks:[],
         messages:[],
         } ;

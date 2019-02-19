@@ -4,8 +4,8 @@ import createData from "../createData";
 
 function TransactionsPanel(props) {
     var transactions = [];
-    transactions = props.orders.map((trans)=>{
-        return <TransactionRow order={trans} />
+    transactions = props.orders.map((trans,index)=>{
+        return <TransactionRow key={index} order={trans} />
     });
   return (
     <div className="panel panel-default">

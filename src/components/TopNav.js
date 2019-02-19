@@ -3,8 +3,8 @@ import MessagePreview from "./MessagePreview";
 
 function TopNav(props) {
     var messageList = [];
-    messageList = props.messages.map((m)=>{
-        return <MessagePreview message={m} />
+    messageList = props.messages.map((m,index)=>{
+        return <MessagePreview key={index} message={m} />
     });
   return (
     <ul className="nav navbar-right top-nav">
