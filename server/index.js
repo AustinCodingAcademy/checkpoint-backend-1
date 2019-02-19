@@ -17,6 +17,7 @@ const app = express()
 const orderRoutes = require("./routes/order");
 const taskRoutes = require("./routes/task");
 const messageRoutes = require("./routes/message");
+const foxRoutes = require("./routes/fox");
 
 // * The ceo likes to look at pictures of foxes while reading business reports
 // * install node-fetch
