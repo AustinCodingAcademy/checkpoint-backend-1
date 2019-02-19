@@ -1,22 +1,22 @@
-const OrderModel = require("../Models/OrderModel");
+const orderModel = require("../Models/OrderModel");
 
 //GET request
 exports.list = function list (request, response) {
-    OrderModel.find().exec().then((orders) => {
+    orderModel.find().exec().then((orders) => {
         return response.json(orders)
     });
 }
 
 //GET request by Id
 exports.show = function show (request, response) {
-    OrderModel.findById(request.params.id).exec.then((order) => {
+    orderModel.findById(request.params.id).exec.then((order) => {
         return response.json(order)
     });
 }
 
 //POST request
 exports.create = function create (request, response) {
-    const newOrder = new OrderModel ({
+    const newOrder = new orderModel ({
         body: request.body.body
     })
     newOrder.save().then((savedNewOrder) => {
