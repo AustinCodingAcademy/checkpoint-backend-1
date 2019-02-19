@@ -24,18 +24,22 @@ const foxRoutes = require("./routes/fox");
 // * make a route for /foxes
 // * make a http get call to https://randomfox.ca/floof/
 // * send back the image value
-const foxRoutes = require("./routes/fox");
+const foxesRoutes = require("./routes/fox");
 
 app.use(bodyParser.json());
 app.use(orderRoutes);
 app.use(taskRoutes);
 app.use(messageRoutes);
-app.use(foxRoutes);
+app.use(foxesRoutes);
+
+let projPort = 3001;
 
 // * listen on port 3001
-app.listen(3001, (err) => {
+app.listen(projPort, (err) => {
     if (err) {
-      return console.log("Error", err);
+      return console.log("Error");
+    } else {
+      console.log("Web server is now listening for messages", projPort);
     }
-    console.log("Web server is now listening for messages", err);
+    
    }); 
