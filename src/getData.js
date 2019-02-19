@@ -11,7 +11,7 @@ module.exports.getData = function(dataRetrieved){
     "messages",
     "foxes"]
 
-    let fetches = routes.map((r)=>{
+    routes.map((r)=>{
       return fetch("/" + r)
       .then(res=>res.json())
       .then(d=>done(d,r))
@@ -30,7 +30,7 @@ module.exports.getData = function(dataRetrieved){
         } ;
 
     function done(d,k){
-
+debugger
         routes.pop();
         if(d){data[k] = d;}
         if(routes.length ===0)
