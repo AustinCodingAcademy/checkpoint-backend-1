@@ -14,18 +14,18 @@ exports.list=  function list(request, response) {
     }    
 }
 
-exports.show = function show(request, response) {
-    const getModel = request.params.path;
-    const getId = request.params.id
+// exports.show = function show(request, response) {
+//     const getModel = request.params.path;
+//     const getId = request.params.id
 
-    if(pathModelPair[getModel] !== undefined) {
-        pathModelPair[getModel].findById(getId, (err, models) => {
-            return response.json(models);
-        })
-    } else {
-        response.end();
-    }
-}
+//     if(pathModelPair[getModel] !== undefined) {
+//         pathModelPair[getModel].findById(getId, (err, models) => {
+//             return response.json(models);
+//         })
+//     } else {
+//         response.end();
+//     }
+// }
 
 exports.create =  function create(request, response) {
     const getModel = request.params.path;

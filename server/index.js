@@ -6,12 +6,16 @@ mongoose.connect('mongodb://Bossman1:Bossman2@ds237955.mlab.com:37955/dashboard'
 const app = express();
 
 const databaseRoutes = require("./Routes/databaseRoutes");
-const csvRoutes = require("./Routes/dataCSVRoutes")
+const csvRoutes = require("./Routes/dataCSVRoutes");
+const foxRoute = require("./Routes/foxRoute");
 
 
 app.use(bodyParser.json());
 app.use(csvRoutes);
+app.use(foxRoute);
 app.use(databaseRoutes);
+
+
 
 
 
