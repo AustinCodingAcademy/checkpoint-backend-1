@@ -34,16 +34,16 @@ function render(data){
 
   ReactDOM.render(
     <App 
-      taskItem={taskItem}
-      dateTime={dateTime}
-      newComments={newComments}
-      newTasks={newTasks}
-      newOrders={newOrders}
-      tickets={tickets}
-      orders={orders} 
-      tasks={tasks}
-      messages={messages}
-      foxes={foxes}
+      // taskItem={taskItem}
+      // dateTime={dateTime}
+      // newComments={newComments}
+      // newTasks={newTasks}
+      // newOrders={newOrders}
+      // tickets={tickets}
+      // orders={orders} 
+      // tasks={tasks}
+      // messages={messages}
+      // foxes={foxes}
       />,
     document.getElementById("root")
   );
