@@ -1,7 +1,6 @@
 const express = require("express");
-
-//const mongoose = require('mongoose');
-//mongoose.connect('mongodb://checkpoint1-user:checkpoint1@ds145895.mlab.com:45895/aca-checkpoint1', {useNewUrlParser: true});
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://checkpoint1-user:checkpoint1@ds145895.mlab.com:45895/aca-checkpoint1', {useNewUrlParser: true});
 
 
 //Routes
@@ -9,7 +8,9 @@ const newCommentRoutes = require("./routes/NewCommentRoutes");
 const newTaskRoutes = require("./routes/NewTaskRoutes"); 
 const newOrderRoutes = require("./routes/NewOrderRoutes"); 
 const ticketRoutes = require("./routes/TicketRoutes"); 
-
+const messageRoutes = require("./routes/MessageRoutes");
+const taskRoutes = require("./routes/TaskRoutes");
+const orderRoutes = require("./routes/OrderRoutes");
 
 const bodyParser = require("body-parser");
 const app = express();
@@ -21,6 +22,9 @@ app.use(newCommentRoutes);
 app.use(newTaskRoutes);
 app.use(newOrderRoutes);
 app.use(ticketRoutes);
+app.use(messageRoutes);
+app.use(taskRoutes);
+app.use(orderRoutes);
 
 const thePort = 3001;
 
