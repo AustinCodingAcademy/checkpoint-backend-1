@@ -5,7 +5,11 @@ const express = require("express");
 
 
 //Routes
-const newCommentRoutes = require("./routes/CommentRoutes"); 
+const newCommentRoutes = require("./routes/NewCommentRoutes"); 
+const newTaskRoutes = require("./routes/NewTaskRoutes"); 
+const newOrderRoutes = require("./routes/NewOrderRoutes"); 
+const ticketRoutes = require("./routes/TicketRoutes"); 
+
 
 const bodyParser = require("body-parser");
 const app = express();
@@ -14,6 +18,9 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.use(newCommentRoutes); 
+app.use(newTaskRoutes);
+app.use(newOrderRoutes);
+app.use(ticketRoutes);
 
 const thePort = 3001;
 

@@ -18,7 +18,6 @@ Your company's front end team has completed a business dashboard requested by ma
 ### Routes
 * create get routes.
 * look at data.csv. read this file and pull the information out of it
-  * /dateTime - return the current time
   * /newComments
   * /newTasks
   * /newOrders
