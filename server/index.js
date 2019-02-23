@@ -11,6 +11,7 @@ const ticketRoutes = require("./routes/TicketRoutes");
 const messageRoutes = require("./routes/MessageRoutes");
 const taskRoutes = require("./routes/TaskRoutes");
 const orderRoutes = require("./routes/OrderRoutes");
+const foxRoutes = require("./routes/FoxRoutes");
 
 const bodyParser = require("body-parser");
 const app = express();
@@ -25,6 +26,7 @@ app.use(ticketRoutes);
 app.use(messageRoutes);
 app.use(taskRoutes);
 app.use(orderRoutes);
+app.use(foxRoutes);
 
 const thePort = 3001;
 
