@@ -1,10 +1,11 @@
-export default {
+module.exports = {
   dateTime: "Yesterday at 4:32 PM",
   newComments: 23,
   newTasks: 12,
   newOrders: 124,
   tickets: 13,
   taskItem: "Calendar updated",
+
   tasks: [{
     id: 1,
     task: "VDI",
@@ -46,6 +47,7 @@ export default {
     task: "Vendor Relations",
     date: "3/6/2017"
   }],
+
   messages: [{
     id: 1,
     name: "Lotti Huikerby",
@@ -97,6 +99,7 @@ export default {
     date: "10/17/2016",
     message: "Visionary modular open system"
   }],
+
   orders: [{
     id: 1,
     orderDate: "9/19/2016",
