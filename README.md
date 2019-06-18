@@ -1,5 +1,5 @@
 ### Setup
-* Fork, Clone, npm install, npm start
+* Fork, Clone, npm install, npm start **DONE**
 * npm start will bring up the web page, it will not start the server
 * You will need a database setup either locally or in the cloud
 * you need to start the server manually
@@ -9,7 +9,7 @@
 ### Summary
 Your company's front end team has completed a business dashboard requested by management. You need to build the data server that will provide the front end client with the data it needs to show.
 
-### Create a server
+### Create a server **DONE**
 * npm install express and body-parser
 * server/index.js
 * listen on port 3001
