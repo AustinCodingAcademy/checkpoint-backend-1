@@ -10,6 +10,7 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "foreman": "^2.0.0",
     "prop-types": "^15.5.8",
     "react": "^15.3.2",

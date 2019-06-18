@@ -9,8 +9,8 @@ import AreaChart from "./components/AreaChart";
 import DonutChart from "./components/DonutChart";
 import TasksPanel from "./components/TasksPanel";
 import TransactionsPanel from "./components/TransactionsPanel";
-import PropTypes from "prop-types";
-import getData from "./getData"
+//import PropTypes from "prop-types";
+//import getData from "./getData"
 
 function App(props) {
  
