@@ -9,10 +9,12 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.7",
+    "node": "^12.7.0",
     "node-fetch": "^2.6.0",
     "prop-types": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
     "start": "nf start",

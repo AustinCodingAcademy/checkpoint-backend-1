@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-// app.use(express.static("public"));
+app.use(express.static("public"));
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://kelly-nguyen-1:45683968kn@aca-practice-ss4lm.mongodb.net/checkpoint-backend-1?retryWrites=true&w=majority', {useNewUrlParser: true});
 

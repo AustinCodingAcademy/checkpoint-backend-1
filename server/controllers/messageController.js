@@ -12,8 +12,8 @@ exports.show = function show(request, response) {
 }
 exports.create =  function create(request, response) {
    let newMessage = new Message ({
-       id: request.body.id,
-       name: request.body.name,
+        id: request.body.id,
+        name: request.body.name,
         date: request.body.date,
         message: request.body.message
    })
