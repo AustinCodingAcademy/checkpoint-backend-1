@@ -1,0 +1,12 @@
+const mongoose = require('mongoose');
+
+var MessageSchema = new mongoose.Schema({
+    id: Number,
+  name: String,
+   date: String,
+   message: String
+});
+
+var Message = mongoose.model('Order', MessageSchema);
+
+module.exports = Message
