@@ -3,8 +3,8 @@ const router = express.Router();
 const {list,show,create} = require("../controllers/messageController");
 
 // ORDERS
-router.get('/order',list)
-router.get('/order:id', show)
-router.post('/order', create)
+router.get('/orders',list)
+router.get('/orders/:id', show)
+router.post('/orders', create)
   
 module.exports = router;

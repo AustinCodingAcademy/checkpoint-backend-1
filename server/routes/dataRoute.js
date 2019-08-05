@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const filePath='./server/data.csv';
 const csv = require("csvtojson");
-csv().fromFile(filePath);
 
 router.get("/newDate", (request, response)=>{
     response.send(new Date);
@@ -40,4 +39,4 @@ router.get("/tickets", (request, response)=>{
     });
 });
 
-module.exports = router;
+module.exports = router; 
