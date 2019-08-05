@@ -11,7 +11,7 @@ router.get("/newComments", (request, response)=>{
     csv()
     .fromFile(filePath)
     .then(jsonObj=>{
-    response.send(jsonObj[0].new_comments)
+    response.json(jsonObj[0].new_comments)
     });
 });
 
