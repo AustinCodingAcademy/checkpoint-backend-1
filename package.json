@@ -6,6 +6,10 @@
     "react-scripts": "*"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*"
@@ -29,5 +33,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Your company's front end team has completed a business dashboard requested by management. You need to build the data server that will provide the front end client with the data it needs to show.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SelenaSolis/checkpoint-backend-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SelenaSolis/checkpoint-backend-1/issues"
+  },
+  "homepage": "https://github.com/SelenaSolis/checkpoint-backend-1#readme"
 }
