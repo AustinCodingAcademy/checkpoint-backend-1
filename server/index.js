@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Joe_Cluster:cluster@cluster0-2avxp.mongodb.net/aca-store', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://Joe_Cluster:cluster@cluster0-2avxp.mongodb.net/checkpoint-backend-1', {useNewUrlParser: true});
 
 let taskRoute = require('../Routes/taskRoutes');
 let orderRoute = require('../Routes/ordersRoutes');
