@@ -8,7 +8,7 @@ router.get('/newComments', getComments)
 
 router.get('/newTasks', getTasks)
 
-router.get('newOrders', getOrders)
+router.get('/newOrders', getOrders)
 
 router.get('/tickets', getTickets)
 
