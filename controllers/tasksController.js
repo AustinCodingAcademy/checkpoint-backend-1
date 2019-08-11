@@ -18,9 +18,13 @@ exports.show = function show(request, response) {
    
 // post
 exports.create =  function create(request, response) {
-    const newTask = new TaskModel(request.body);
-    newTask.save((err,task) => {
-        response.json(task);
+    const newTask = new TaskModel({
+        id: request.body.id,
+        task: request.bod.task,
+        date: request.body.date
+    });
+    newTask.save(() => {
+       return response.json(newTask);
     });
 }
    

@@ -18,8 +18,13 @@ exports.show = function show(request, response) {
    
 // post
 exports.create =  function create(request, response) {
-    const newMessage = new MessageModel(request.body);
-    newMessage.save((err, message) => {
-        response.json(message);
+    const newMessage = new MessageModel({
+        id: request.body.id,
+        name: request.body.name,
+        date: request.body.date,
+        message:request.body.message});
+
+    newMessage.save(() => {
+        response.json(newMessage);
     });
 }

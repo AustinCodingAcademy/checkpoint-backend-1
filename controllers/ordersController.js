@@ -24,7 +24,7 @@ exports.create =  function create(request, response) {
       orderTime: request.body.orderTime,
       amount: request.body.amount
     })
-    newOrder.save().then(savedOrder=>{
-        console.log(savedOrder)
-    })    
+    newOrder.save(()=>{
+        return response.json(newOrder);
+    });    
 }

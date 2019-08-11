@@ -7,6 +7,6 @@ var OrderSchema = new mongoose.Schema({
    amount: String
 });
 
-// var Order = mongoose.model('Order', OrderSchema);
+var Order = mongoose.model('Order', OrderSchema);
 
-module.exports = mongoose.model('Order', OrderSchema);
+module.exports = Order;
