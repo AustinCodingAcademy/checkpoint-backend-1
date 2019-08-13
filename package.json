@@ -6,6 +6,12 @@
     "react-scripts": "*"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9",
+    "node-fetch": "^2.6.0",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*"
