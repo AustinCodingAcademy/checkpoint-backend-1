@@ -5,7 +5,7 @@ const dotenv = require('dotenv').config();
 
 const messageRoutes = require('./routes/messages');
 const orderRoutes = require('./routes/orders');
-// const taskRoutes = require('./routes/tasks');
+const tasksRoutes = require('./routes/tasks');
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@aca-practice-bx4sb.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true});
 
@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(messageRoutes);
 app.use(orderRoutes);
+app.use(tasksRoutes);
 // app.use(taskRoutes);
 
 app.get('/', (req, res) => res.send(`It's working`))
