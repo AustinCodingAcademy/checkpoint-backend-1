@@ -6,6 +6,8 @@ const dotenv = require('dotenv').config();
 const messageRoutes = require('./routes/messages');
 const orderRoutes = require('./routes/orders');
 const tasksRoutes = require('./routes/tasks');
+const dataRoutes = require('./routes/data')
+const foxesRoutes = require('./routes/foxes');
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@aca-practice-bx4sb.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true});
 
@@ -24,7 +26,8 @@ app.use(express.static('public'));
 app.use(messageRoutes);
 app.use(orderRoutes);
 app.use(tasksRoutes);
-// app.use(taskRoutes);
+app.use(dataRoutes);
+app.use(foxesRoutes);
 
 app.get('/', (req, res) => res.send(`It's working`))
 
