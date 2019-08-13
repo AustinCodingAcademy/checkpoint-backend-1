@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const messageSchema = new Schema ({
     name: String,
-    date: Date,
+    date: String,
     message: String
 })
 
